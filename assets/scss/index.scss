@@ -1,7 +1,6 @@
 .main {
     position: relative;
     
-    
     &__container {
         display: flex;
         justify-content: center;
@@ -10,6 +9,16 @@
         
     }
 
+    &__modalAjax {
+        position:   fixed;
+        z-index:    1000;
+        top:        0;
+        left:       0;
+        height:     100%;
+        width:      100%;
+        background: rgba( 255, 255, 255, .5 ) url('../img/loading.gif')  50% 50% no-repeat;
+    }
+    
     &__image {
         width: 100%;
         height: auto;
@@ -17,15 +26,16 @@
     }
 
     &__containerSearch {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
         position: absolute;
         width: 286px;
         bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         border-radius: 15px 15px 0 0;
         background-color: #242424;
         padding: 1rem;
+        transition: 1s;
     }
 
     &__dateText {
@@ -56,10 +66,7 @@
         color: #ffffff;
         margin: 0 1rem;
     }
-
-
 }
-
 
 /* UTILS */
 
@@ -73,4 +80,13 @@
 
 .img-text-change {
     background-image: url("../img/img-text-change.png") !important;
+}
+
+
+@media (min-width: 768px) {
+    .main__containerSearch {
+        border-radius: 20px;
+        bottom: 5%;
+        transition: 1s;
+    }
 }
